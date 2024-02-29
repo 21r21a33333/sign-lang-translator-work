@@ -1,0 +1,29 @@
+my db.json file is in this form 
+
+{
+    {
+    name:
+    instance[]
+    },
+}
+
+
+now write a code that inserts another 
+{
+    name:
+    instance[]
+}
+
+    into is such that the file becomes
+{
+    {
+    name:
+    instance[]
+    },
+    {
+    name:
+    instance[]
+}
+    
+}
+

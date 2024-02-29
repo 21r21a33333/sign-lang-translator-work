@@ -1,0 +1,35 @@
+function onResults(results) {
+  array.push(results);
+  console.log(array.length);
+
+  if (array.length === 100) {
+    // Perform canvas changes using the array elements
+
+    array.forEach((elements) => {
+      canvasCtx.save();
+      canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+      canvasCtx.drawImage(elements.segmentationMask, 0, 0, canvasElement.width, canvasElement.height);
+
+      // Only overwrite existing pixels.
+      // canvasCtx.globalCompositeOperation = 'source-in';
+      // canvasCtx.fillStyle = '#00FF00';
+      canvasCtx.fillRect(0, 0, canvasElement.width, canvasElement.height);
+
+      // Only overwrite missing pixels.
+      canvasCtx.globalCompositeOperation = 'destination-atop';
+      canvasCtx.drawImage(elements.image, 0, 0, canvasElement.width, canvasElement.height);
+
+      canvasCtx.globalCompositeOperation = 'source-over';
+      drawConnectors(canvasCtx, elements.poseLandmarks, POSE_CONNECTIONS, { color: '#00FF00', lineWidth: 4 });
+      drawLandmarks(canvasCtx, elements.poseLandmarks, { color: '#FF0000', lineWidth: 2 });
+      drawConnectors(canvasCtx, elements.faceLandmarks, FACEMESH_TESSELATION, { color: '#C0C0C070', lineWidth: 1 });
+      drawConnectors(canvasCtx, elements.leftHandLandmarks, HAND_CONNECTIONS, { color: '#CC0000', lineWidth: 5 });
+      drawLandmarks(canvasCtx, elements.leftHandLandmarks, { color: '#00FF00', lineWidth: 2 });
+      drawConnectors(canvasCtx, elements.rightHandLandmarks, HAND_CONNECTIONS, { color: '#00CC00', lineWidth: 5 });
+      drawLandmarks(canvasCtx, elements.rightHandLandmarks, { color: '#FF0000', lineWidth: 2 });
+      canvasCtx.restore();
+    });
+
+    console.log('Canvas changes completed.');
+  }
+}

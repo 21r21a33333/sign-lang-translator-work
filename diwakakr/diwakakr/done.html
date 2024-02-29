@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>done</h1>
+    <ul id="elementList">
+
+    </ul>
+    <script type="module">
+ // Retrieve the array elements from localStorage
+const arrayElements = JSON.parse(localStorage.getItem('arrayElements'));
+
+// Display the array elements on the page
+const elementList = document.getElementById('elementList');
+if (arrayElements && Array.isArray(arrayElements)) {
+  arrayElements.forEach(element => {
+    const listItem = document.createElement('li');
+    listItem.textContent = element;
+    elementList.appendChild(listItem);
+  });
+} else {
+  console.log('Error: No array elements found');
+}
+
+
+    </script>
+</body>
+</html>

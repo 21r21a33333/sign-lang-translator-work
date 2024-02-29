@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign_speech</title>
+    <style>
+        .button {
+            background-color: #d84a4a;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .output_canvas {
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="mystyle.css">
+
+</head>
+<body>
+    <h1>SIGN SPEECH</h1>
+    <div class="container">
+        
+            <input type="text" name="name" class="question" id="to_be_changed" required autocomplete="off" />
+            <label for="nme"><span>What's to sign ?</span></label>
+            <button class="button" id="your_button_id" >SIGN NOW</button>
+    </div>
+            <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+            <div id="subtitles"></div>
+    <script src="index.js"></script>
+</body>
+</html>

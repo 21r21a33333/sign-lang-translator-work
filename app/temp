@@ -1,0 +1,36 @@
+
+  let callthem=parameter.split("");
+  for(let calls in callthem){
+    if(callthem[calls]=="")continue;
+      subtitles.textContent = callthem[calls];
+      subtitles.style.visibility = 'visible';
+      subtitles.style.textAlign = 'center';
+      subtitles.style.textEmphasisColor = 'red';
+      console.log(callthem[calls]);
+      const indQuery=store.get(callthem[calls]);
+      console.log(indQuery.result.ins,indQuery.result.gloss);
+      //await done(indQuery.result.ins,indQuery.result.gloss);
+      subtitles.style.visibility = 'hidden';
+  }
+
+
+
+
+
+
+  
+  let callthem=parameter.split("");
+  for(let calls in callthem){
+    if(callthem[calls]=="")continue;
+      subtitles.textContent = callthem[calls];
+      subtitles.style.visibility = 'visible';
+      subtitles.style.textAlign = 'center';
+      subtitles.style.textEmphasisColor = 'red';
+      console.log(callthem[calls]);
+      const indQuery=store.get(callthem[calls]);
+      console.log(indQuery.result.ins,indQuery.result.gloss);
+      //await done(indQuery.result.ins,indQuery.result.gloss);
+      subtitles.style.visibility = 'hidden';
+  }
+
+
